@@ -6,6 +6,13 @@
 	add_action('after_setup_theme', 'theme_register_nav_menu' ); 
 	add_action('widgets_init', 'register_my_widgets'); 
 	add_filter( 'document_title_separator', 'my_sep' );
+	add_filter('the_content', 'test_content');
+
+	function test_content($content){
+		$content.= 'Thanks for reading the article!';
+		return $content; 
+	}
+
 	function my_sep( $sep ){
 		$sep = ' | ';
 		return $sep;

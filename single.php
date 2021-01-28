@@ -7,7 +7,7 @@
       <div class="row">
 
          <div class="ten columns centered text-center">
-            <h1>Category<span>.</span></h1>
+            <h1>Single<span>.</span></h1>
 
             <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
             enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
@@ -25,10 +25,7 @@
 
          <div id="primary" class="eight columns">
 
-            <?php if (have_posts()){
-               while(have_posts()){
-                  the_post(); ?>
-                 <article class="post">
+            <article class="post">
 
                <div class="entry-header cf">
 
@@ -36,10 +33,12 @@
 
                   <p class="post-meta">
 
-                     <time class="date" datetime="2014-01-14T11:24"><?php the_time('j F Y'); ?></time>
-                     
+                     <time class="date" datetime="2014-01-14T11:24">Jan 14, 2014</time>
+                     /
                      <span class="categories">
-                        <?php the_tags( '', ' / '); ?>
+                     <a href="#">Design</a> /
+                     <a href="#">User Inferface</a> /
+                     <a href="#">Web Design</a>
                      </span>
 
                   </p>
@@ -47,22 +46,18 @@
                </div>
 
                <div class="post-thumb">
-                  <a href="single.html" title=""> <?php the_post_thumbnail('post_thumb'); ?> </a>
+                  <?php the_post_thumbnail(); ?>
                </div>
 
                <div class="post-content">
-
-                 <?php the_excerpt(); ?>
+                <?php the_post(); ?>
+                <?php the_content(); ?>
 
                </div>
 
             </article> <!-- post end -->
-               <?php } // while ends ?>
-                 <!-- Pagination -->
-                 <?php the_posts_pagination(); ?>
-            <?php } // if ends ?>  
 
-          
+            
 
          </div> <!-- Primary End-->
 
