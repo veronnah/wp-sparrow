@@ -38,6 +38,7 @@
 		register_nav_menu( 'footer', 'footer_menu' );
 		add_theme_support('title-tag');
 		add_theme_support('post-thumbnails', array('post'));
+		add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
 		add_image_size('post_thumb', 1300, 500, true);
 		add_filter('excerpt_more', 'new_excerpt_more'); 
 		add_filter( 'excerpt_more', 'new_excerpt_more' );
